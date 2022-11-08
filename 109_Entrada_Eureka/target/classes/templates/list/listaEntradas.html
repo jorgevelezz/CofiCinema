@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="master">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<title>ListaHeroes</title>
+</head>
+
+<body>
+<div class="panel panel-info">
+	<div class="panel-heading"><h3>Lista de Entradas</h3></div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Numero Butacas</th>
+				<th>Hora</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr data-th-each="entrada: ${entradas}" >
+
+			
+				<td data-th-text="${entrada.getNombre()}"></td>
+
+				<td data-th-text="${entrada.getNum_butacas()}"></td>
+				
+				<td data-th-text="${entrada.getHora()}"></td>
+				
+			</tr>
+
+		</tbody>
+
+	</table>
+
+</div>
+
+<br/>
+	<a class="btn btn-info" href="/comprar">Comprar</a>
+	
+	<a class="btn btn-info" href="/inicio">Volver</a>
+</body>
+
+</html>
